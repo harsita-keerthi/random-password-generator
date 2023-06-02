@@ -20,7 +20,19 @@ class RandomPassword {
      * @return a random character
      */
     public static char randomCharacter() {
-        return 'a';
+        //26 lowercase + 26 uppercase + 10 digits = 62
+        //random has values between 0 and 62
+        int random = (int)(Math.random()*62);
+        if (random <= 9) { //random is a digit
+            int number = random + 48; 
+            return (char)number;
+        } else if (random <= 35) { //random is an uppercase letter
+            int uppercase = random + 55;
+            return (char)uppercase;
+        } else { //random is a lowercase letter
+            int lowercase = random + 61;
+            return (char)lowercase;
+        }
     }
     
     /*
@@ -29,7 +41,7 @@ class RandomPassword {
      * @param arr is the array to be printed
      */
     public static void printArray(String[] arr) {
-
+        
     }
     
     /*
